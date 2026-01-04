@@ -1,0 +1,347 @@
+.core-heading {
+    font-weight: 700;
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+    color: #333;
+}
+
+/* Gradient underline */
+.core-heading::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 60%;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.core-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+    .core-heading {
+        font-size: 2rem;
+    }
+
+    .core-subtitle {
+        font-size: 1rem;
+    }
+}
+
+
+.img-size {
+    min-height: 415px;
+    max-height: 415px;
+}
+
+.gallery-image {
+    width: 100%;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.img-size-for-click {
+    min-height: 250px;
+    max-height: 250px;
+}
+
+/* General styling for the card container */
+.gallery-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ensures image corners are rounded with the card */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Smooth transitions for hover */
+    height: 100%;
+    /* Make cards same height if they are in a flex/grid row */
+    display: flex;
+    /* Use flexbox for internal layout */
+    flex-direction: column;
+    /* Stack image and body vertically */
+}
+
+/* Ensure the link itself doesn't have default browser styles */
+.gallery-card-link {
+    text-decoration: none;
+    /* Remove underline from the whole card/link */
+    color: inherit;
+    /* Inherit text color from parent, or set a default */
+    display: block;
+    /* Make the anchor tag take up the full card space */
+    height: 100%;
+    /* Ensure the link fills the column height */
+}
+
+/* Image styling */
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    /* Fixed height for images, adjust as needed */
+    object-fit: cover;
+    /* Ensures images fill the space without distortion */
+    border-bottom: 1px solid #e0e0e0;
+    /* Separator between image and text */
+}
+
+/* Card Body styling */
+.gallery-card .card-body {
+    padding: 15px;
+    flex-grow: 1;
+    /* Allows card-body to take up remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Pushes title/text to top/bottom if needed */
+}
+
+/* Title styling - looks normal, not like a link */
+.gallery-card .card-title {
+    font-size: 1.25rem;
+    /* Larger font for title */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+    /* Darker color for title */
+    transition: color 0.3s ease-in-out;
+    /* Smooth transition for title color on hover */
+}
+
+/* Text styling - looks normal, not like a link */
+.gallery-card .card-text {
+    font-size: 0.95rem;
+    color: #666;
+    /* Slightly lighter color for text */
+    line-height: 1.5;
+    transition: color 0.3s ease-in-out;
+    /* Smooth transition for text color on hover */
+}
+
+/* Hover effect for the entire card */
+.gallery-card-link:hover .gallery-card {
+    transform: translateY(-5px);
+    /* Lifts the card slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    /* Adds a stronger shadow */
+}
+
+/* Optional: Change title/text color on hover if desired */
+.gallery-card-link:hover .card-title {
+    color: #007bff;
+    /* Example: blue title on hover */
+}
+
+.gallery-card-link:hover .card-text {
+    color: #0056b3;
+    /* Example: darker blue text on hover */
+}
+
+
+/* Wrapper ensures tagline stays centered */
+.tagline-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main tagline container */
+.tagline-strip {
+    width: 70%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    /* Beautiful violet-blue gradient */
+    color: #ffeaa7;
+    /* Soft golden-yellow text */
+    padding: 30px 60px;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: fadeInSlide 1.2s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* Make the h4 large and beautiful */
+.tagline-strip h4 {
+    font-size: 3rem !important;
+    /* Force override Bootstrap */
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+
+/* Animation: fade in and slide up */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover interaction */
+.tagline-strip:hover {
+    transform: scale(1.02);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* tiles  */
+
+.stats-section {
+  margin-top: 60px;
+}
+
+.stat-tile {
+  height: 220px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: #222; /* default dark text */
+}
+
+.stat-tile:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Icon styling */
+.icon-wrapper i {
+  font-size: 3rem;
+  color: #222; /* dark icons */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.stat-tile:hover .icon-wrapper i {
+  transform: scale(1.1) rotate(5deg);
+  color: #000; /* darker on hover */
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #111; /* dark number */
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+/* Fade-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-stat {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Sequential animation delay */
+.delay-0 { animation-delay: 0.2s; }
+.delay-1 { animation-delay: 0.4s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.8s; }
+
+
+
+/* Circle Items */
+.gallery-card {
+  border: none;
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gallery-card:hover {
+  transform: scale(1.03);
+}
+
+.image-wrapper {
+  width: 350px;          /* control image size */
+  height: 350px;
+  overflow: hidden;
+  border-radius: 50%;    /* makes it circular */
+  margin: 0 auto;
+  border: 3px solid #ddd; /* optional border for style */
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* ensures image fills circle */
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-text {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.gallery-card-link {
+  color: inherit;
+}
+
+.gallery-card-link:hover {
+  text-decoration: none;
+}
+
+
+/* Line*/
+.animated-line {
+    width: 0;
+    height: 3px;
+    margin: 30px auto;        /* centers the line */
+    border: none;
+    background: #3498db;      /* blue color — you can change it */
+    border-radius: 2px;
+    animation: expandLine 1.5s ease forwards;
+  }
+
+  @keyframes expandLine {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 70%;
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,108 @@
+<div class="text-center">
+  <h2 class="core-heading">
+    Our Core Services
+  </h2>
+  <!-- <p class="core-subtitle">
+    We provide world-class solutions designed to help your business thrive
+  </p> -->
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let card of ourCoreServices">
+      <div class="card mb-4">
+        <img class="card-img-top img-size" [src]="card.imgUrl" alt="{{ card.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.text }}</p>
+          <a [href]="card.link" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- group items -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let image of imageGallery">
+      <a [href]="image.link" class="gallery-card-link">
+        <div class="card gallery-card"> 
+          <img [src]="image.imgUrl" alt="Gallery image" class="gallery-image img-fluid" /> 
+          <div class="card-body">
+            <h5 class="card-title">{{ image.title }}</h5>
+            <p class="card-text">{{ image.text }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Tagline Strip -->
+<div class="tagline-wrapper d-flex justify-content-center mt-5">
+  <div class="tagline-strip text-center animate-tagline">
+    <h4 class="mb-0">Styling Life's Every Occasion.</h4>
+  </div>
+</div>
+
+
+<!-- Circle Items -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let image of circleGallery">
+      <a [href]="image.link" class="gallery-card-link text-decoration-none">
+        <div class="card gallery-card text-center">
+          <div class="card-body">
+            <!-- Circular image -->
+            <div class="image-wrapper mx-auto mb-3">
+              <img
+                [src]="image.imgUrl"
+                alt="Gallery image"
+                class="gallery-image img-fluid"
+              />
+            </div>
+
+            <!-- Info below image -->
+            <h5 class="card-title mb-1">{{ image.title }}</h5>
+            <p class="card-text">{{ image.text }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<hr class="animated-line">
+
+<div class="container my-5 stats-section">
+  <div class="text-center mb-4">
+    <h2>Our Achievements</h2>
+    <p>Highlights of our success and growth</p>
+  </div>
+</div>
+<!-- Stats Section -->
+<div class="container my-5 stats-section">
+  <div class="row text-center">
+    <div
+      class="col-md-6 mb-4"
+      *ngFor="let stat of stats; let i = index"
+      [ngClass]="'animate-stat delay-' + i"
+    >
+      <div
+        class="stat-tile p-4 shadow-sm rounded d-flex flex-column align-items-center justify-content-center"
+        [ngStyle]="{'background': stat.color}"
+      >
+        <div class="icon-wrapper mb-3">
+          <i [class]="stat.icon"></i>
+        </div>
+        <h2 class="stat-number">{{ stat.number }}</h2>
+        <p class="stat-label">{{ stat.label }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-customer-feedback></app-customer-feedback>

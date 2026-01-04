@@ -1,0 +1,46 @@
+<!-- Section Title -->
+<div class="text-center mt-5 mb-4">
+  <h2 class="fw-bold recent-title">Recent Customer Reviews</h2>
+  <p class="text-muted">What our happy customers are saying about us</p>
+</div>
+
+<!-- Auto Carousel showing 3 reviews per slide -->
+<div id="customerFeedbackCarousel" 
+     class="carousel slide" 
+     data-bs-ride="carousel" 
+     data-bs-interval="3000">
+
+  <div class="carousel-inner">
+    <div 
+      class="carousel-item" 
+      *ngFor="let slide of [].constructor(numberOfSlides); let i = index"
+      [class.active]="i === 0">
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4" *ngFor="let review of getReviewsForSlide(i)">
+            <div class="card feedback-card text-center p-4 shadow-sm mb-4">
+              <img 
+                [src]="review.imgUrl" 
+                alt="{{ review.name }}" 
+                class="rounded-circle mx-auto mb-3 customer-img">
+
+              <h5 class="mb-1">{{ review.name }}</h5>
+
+              <!-- Star Rating -->
+              <div class="stars mb-2">
+                <ng-container *ngFor="let star of [].constructor(5); let idx = index">
+                  <i class="bi"
+                     [ngClass]="idx < review.rating ? 'bi-star-fill text-warning' : 'bi-star text-muted'">
+                  </i>
+                </ng-container>
+              </div>
+
+              <p class="review-text text-muted">“{{ review.review }}”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
