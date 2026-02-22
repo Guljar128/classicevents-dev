@@ -16,7 +16,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ card.title }}</h5>
           <p class="card-text">{{ card.text }}</p>
-          <a [href]="card.link" class="btn btn-primary">View Details</a>
+          <a [routerLink]="card.link" class="btn btn-primary">View Details</a>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
 <div class="container mt-4">
   <div class="row">
     <div class="col-md-4 mb-3" *ngFor="let image of imageGallery">
-      <a [href]="image.link" class="gallery-card-link">
+      <a [routerLink]="image.link" class="gallery-card-link">
         <div class="card gallery-card"> 
           <img [src]="image.imgUrl" alt="Gallery image" class="gallery-image img-fluid" /> 
           <div class="card-body">
